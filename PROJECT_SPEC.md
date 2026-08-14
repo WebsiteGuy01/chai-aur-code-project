@@ -1,11 +1,19 @@
-# Project Specification: Terminal Todo CLI
+# Project: PowerStatus PK
+Solving the challenge of real-time load-shedding transparency in Pakistan.
 
-## Core Goal
-Create a robust, fast, and intuitive command-line interface for managing daily tasks directly in the terminal, focusing on local persistence and keyboard-driven efficiency.
+## 1. Tech Stack (Optimized for Speed)
+*   **Backend:** Python (FastAPI) - Lightweight, fast async capabilities.
+*   **Database:** SQLite - No-config, single-file storage for rapid MVP iteration.
+*   **Frontend:** React (Vite) - Highly productive SPA framework.
+*   **Styling:** Vanilla CSS - No external dependencies to slow down initial setup.
 
-## Architecture
-A Go-based CLI tool leveraging a local JSON file for data storage, utilizing a layered approach: UI/CLI commands, a task management service layer, and a file-based data repository.
+## 2. Core Architecture
+A lightweight Client-Server architecture:
+*   **Server:** FastAPI backend providing a RESTful API.
+*   **Database:** SQLite instance managing neighborhood data and crowd-sourced outage reports.
+*   **Client:** React-based dashboard, consuming API data and providing a form for users to report current status.
 
-## Tasks
-### Task 1
-Implement the basic project structure and command-line parsing using `cobra` to allow adding and listing tasks.
+## 3. MVP Micro-Tasks (Sequential)
+1.  **Backend Foundation:** Setup FastAPI project, define SQLite model for `outages` (location, status, timestamp), and implement `GET /status` and `POST /report` endpoints.
+2.  **UI Core:** Develop a basic React frontend with a dashboard layout to display outage status and a simple form for users to submit reports.
+3.  **Integration & Delivery:** Connect UI to API, implement simple polling for real-time updates, and ensure the UI is mobile-responsive for field use.
