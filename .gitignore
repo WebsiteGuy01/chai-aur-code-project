@@ -1,20 +1,22 @@
-# Ignore Node & NPM dependencies
-node_modules/
-npm-debug.log*
-yarn-debug.log*
+# Backend
+venv/
+backend/__pycache__/
+backend/*.db
+backend/server.log
 
-# Ignore environment variables and API keys
-.env
-*.env
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
 
-# Ignore C++ binaries and object files
-*.o
-*.out
-*.exe
-a.out
-build/
+# IDE
+.idea/
+.vscode/
+*.swp
 
-# Ignore CLI caches & logs
-.gemini/
-.kiro/
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
 *.log
