@@ -25,11 +25,12 @@ function App() {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const [apiUrl] = useState(import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000');
 
   // Fetch outages on mount and poll every 5 seconds
   const fetchOutages = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:8000/status');
+      const response = await fetch(`${apiUrl}/status`);
       const data = await response.json();
       const reports = data.outages || [];
       setOutages(reports);
@@ -65,7 +66,7 @@ function App() {
 
     setSubmitting(true);
     try {
-      const response = await fetch('http://127.0.0.1:8000/report', {
+      const response = await fetch(`${apiUrl}/report`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
